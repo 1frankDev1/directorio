@@ -38,12 +38,13 @@ Para convertir la web en una aplicación instalable:
 - **Instalabilidad:** Prompt nativo para añadir a la pantalla de inicio en Android e iOS.
 
 ## 6. Estructura de Archivos (Frontend)
-El proyecto base incluye:
-- **`index.html`**: Estructura principal, landing page y shell del dashboard.
-- **`style.css`**: Estilos personalizados, animaciones y soporte para modo PWA.
-- **`app.js`**: Lógica de interacción, manejo de modales y registro del Service Worker.
-- **`manifest.json`**: Configuración de la aplicación para su instalación.
-- **`sw.js`**: Service Worker para gestión de caché y soporte offline.
+Los archivos se encuentran en la carpeta `docs/` para compatibilidad con GitHub Pages:
+- **`docs/index.html`**: Estructura principal, landing page y shell del dashboard.
+- **`docs/dashboard.html`**: Panel privado del negocio con herramientas SaaS.
+- **`docs/style.css`**: Estilos personalizados, animaciones y soporte para modo PWA.
+- **`docs/app.js`**: Lógica de interacción, manejo de modales e integración con Supabase.
+- **`docs/manifest.json`**: Configuración de la aplicación para su instalación.
+- **`docs/sw.js`**: Service Worker para gestión de caché y soporte offline.
 
 ## 7. Stack Tecnológico Recomendado
 - **Frontend:** HTML5, CSS3 (Tailwind CSS para agilidad y responsividad), JavaScript ES6+.
