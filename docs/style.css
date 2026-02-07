@@ -1,35 +1,79 @@
-/* Custom Styles for DirectorioPro */
+/* Design: Pastel & Multi-theme for DirectorioPro */
 
 :root {
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
+    /* Default Light/Pastel Theme */
+    --bg-app: #fdf6f0; /* Soft Peach White */
+    --bg-card: #ffffff;
+    --primary: #92a8d1; /* Serenity Blue */
+    --primary-hover: #8196c1;
+    --accent: #f7cac9; /* Rose Quartz */
+    --text-main: #4a4e69;
+    --text-muted: #9a8c98;
+    --border-color: #f2e9e4;
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --shadow: 0 4px 20px -2px rgba(146, 168, 209, 0.15);
+}
+
+[data-theme="intermediate"] {
+    --bg-app: #2d3436;
+    --bg-card: #3b444b;
+    --primary: #81ecec;
+    --primary-hover: #74b9ff;
+    --accent: #fab1a0;
+    --text-main: #dfe6e9;
+    --text-muted: #b2bec3;
+    --border-color: #4b5563;
+    --header-bg: rgba(59, 68, 75, 0.9);
+    --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] {
+    --bg-app: #0f172a;
+    --bg-card: #1e293b;
+    --primary: #38bdf8;
+    --primary-hover: #0ea5e9;
+    --accent: #fb7185;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --header-bg: rgba(30, 41, 59, 0.9);
+    --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
 }
 
 body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+.bg-custom-app { background-color: var(--bg-app); }
+.bg-custom-card { background-color: var(--bg-card); }
+.text-custom-main { color: var(--text-main); }
+.text-custom-muted { color: var(--text-muted); }
+.border-custom { border-color: var(--border-color); }
+
+/* Buttons & Accents */
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+/* Specific UI overrides to support themes without heavy Tailwind re-writing */
+.themed-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    border-radius: 1.5rem;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+.themed-header {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Animations */
@@ -42,25 +86,9 @@ html {
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Transitions for Cards */
-.card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-hover:hover {
-    transform: translateY(-5px);
-}
-
 /* PWA Utility */
-.pwa-only {
-    display: none;
-}
-
 @media (display-mode: standalone) {
     .hide-on-pwa {
         display: none;
-    }
-    .pwa-only {
-        display: block;
     }
 }
