@@ -37,7 +37,15 @@ Para convertir la web en una aplicación instalable:
 - **Service Worker:** Estrategias de caché (Stale-while-revalidate) para permitir el acceso offline a datos básicos y assets.
 - **Instalabilidad:** Prompt nativo para añadir a la pantalla de inicio en Android e iOS.
 
-## 6. Stack Tecnológico Recomendado
+## 6. Estructura de Archivos (Frontend)
+El proyecto base incluye:
+- **`index.html`**: Estructura principal, landing page y shell del dashboard.
+- **`style.css`**: Estilos personalizados, animaciones y soporte para modo PWA.
+- **`app.js`**: Lógica de interacción, manejo de modales y registro del Service Worker.
+- **`manifest.json`**: Configuración de la aplicación para su instalación.
+- **`sw.js`**: Service Worker para gestión de caché y soporte offline.
+
+## 7. Stack Tecnológico Recomendado
 - **Frontend:** HTML5, CSS3 (Tailwind CSS para agilidad y responsividad), JavaScript ES6+.
 - **Backend/Base de Datos:** Supabase (PostgreSQL).
 - **Autenticación:** Supabase Auth (Email/Password, Social Login).

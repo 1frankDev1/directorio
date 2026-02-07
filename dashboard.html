@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Negocio | DirectorioPro SaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-gray-200 hidden md:flex flex-col">
+        <div class="p-6 flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">D</div>
+            <span class="font-bold text-lg">Directorio<span class="text-blue-600">Pro</span></span>
+        </div>
+        <nav class="flex-1 px-4 space-y-1">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-600 rounded-xl font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Resumen
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                Mi Negocio
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12z"></path></svg>
+                Promociones
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                Inventario
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                Notas
+            </a>
+        </nav>
+        <div class="p-4 mt-auto">
+            <div class="bg-blue-600 rounded-2xl p-4 text-white">
+                <p class="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Plan Actual</p>
+                <p class="font-bold mb-4 text-lg">Gratis</p>
+                <button class="w-full bg-white/20 hover:bg-white/30 py-2 rounded-xl text-sm font-bold transition">Mejorar Plan</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+            <h1 class="text-xl font-bold text-gray-800">Panel de Control</h1>
+            <div class="flex items-center gap-4">
+                <button class="relative p-2 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                </button>
+                <div class="flex items-center gap-2 cursor-pointer group">
+                    <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                    <span class="text-sm font-medium group-hover:text-blue-600">Juan Pérez</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="flex-1 overflow-y-auto p-8">
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <p class="text-sm text-gray-500 mb-1 font-medium">Visitas al Perfil</p>
+                    <p class="text-3xl font-bold text-gray-900">1,284</p>
+                    <div class="flex items-center gap-1 text-green-500 text-xs font-bold mt-2">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"></path></svg>
+                        12% este mes
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <p class="text-sm text-gray-500 mb-1 font-medium">Clicks en WhatsApp</p>
+                    <p class="text-3xl font-bold text-gray-900">452</p>
+                    <div class="flex items-center gap-1 text-green-500 text-xs font-bold mt-2">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"></path></svg>
+                        8% este mes
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <p class="text-sm text-gray-500 mb-1 font-medium">Reseñas Nuevas</p>
+                    <p class="text-3xl font-bold text-gray-900">15</p>
+                    <div class="flex items-center gap-1 text-gray-400 text-xs font-bold mt-2">Sin cambios</div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-blue-600 bg-blue-50/30">
+                    <p class="text-sm font-medium mb-1">Promociones Activas</p>
+                    <p class="text-3xl font-bold">3</p>
+                    <button class="text-xs font-bold underline mt-2">Gestionar</button>
+                </div>
+            </div>
+
+            <!-- Business Tools Section -->
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Herramientas para tu negocio</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Tools: Promociones -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Promociones y Juegos</h3>
+                                <p class="text-sm text-gray-500">Atrae más clientes con dinámicas</p>
+                            </div>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-xl text-sm font-bold hover:bg-blue-700 transition">Crear</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-gray-50 rounded-2xl flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded uppercase">Activo</span>
+                                <span class="font-medium text-gray-700">Rasca y Gana: 10% OFF</span>
+                            </div>
+                            <button class="text-gray-400 hover:text-gray-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-2xl flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-700 text-[10px] font-bold rounded uppercase">Borrador</span>
+                                <span class="font-medium text-gray-700">Ruleta de Premios Verano</span>
+                            </div>
+                            <button class="text-gray-400 hover:text-gray-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools: Notas -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Notas Internas</h3>
+                                <p class="text-sm text-gray-500">Recordatorios para tu equipo</p>
+                            </div>
+                        </div>
+                        <button class="px-4 py-2 bg-purple-600 text-white rounded-xl text-sm font-bold hover:bg-purple-700 transition">Nueva</button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-yellow-50 rounded-2xl border border-yellow-100">
+                            <h4 class="font-bold text-yellow-800 text-sm mb-1">Stock de insumos</h4>
+                            <p class="text-xs text-yellow-700 line-clamp-2">Revisar el pedido de cables para el proyecto de la próxima semana.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded-2xl border border-blue-100">
+                            <h4 class="font-bold text-blue-800 text-sm mb-1">Mantenimiento</h4>
+                            <p class="text-xs text-blue-700 line-clamp-2">Llamar al cliente de la calle Mayor para confirmar cita de las 10:00.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools: Inventario -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Inventario Básico</h3>
+                                <p class="text-sm text-gray-500">Controla tus productos clave</p>
+                            </div>
+                        </div>
+                        <button class="text-blue-600 font-bold text-sm">Ver Todo</button>
+                    </div>
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="text-xs font-bold text-gray-400 uppercase tracking-wider border-b border-gray-100">
+                                <th class="pb-3 px-2">Producto</th>
+                                <th class="pb-3 px-2">Cantidad</th>
+                                <th class="pb-3 px-2 text-right">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-gray-50">
+                                <td class="py-3 px-2 font-medium">Cable Unipolar 2.5mm</td>
+                                <td class="py-3 px-2">500m</td>
+                                <td class="py-3 px-2 text-right"><span class="text-green-600 font-bold">Disponible</span></td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-2 font-medium">Llaves Térmicas 16A</td>
+                                <td class="py-3 px-2">2u</td>
+                                <td class="py-3 px-2 text-right"><span class="text-red-500 font-bold">Agotándose</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tools: Archivos -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-100 text-gray-600 rounded-2xl flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Material de Marketing</h3>
+                                <p class="text-sm text-gray-500">Descargables para potenciar tu marca</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 border border-gray-100 rounded-2xl hover:bg-gray-50 transition cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-red-50 text-red-500 flex items-center justify-center rounded-lg font-bold text-[10px]">PDF</div>
+                                <span class="text-sm font-medium">Guía de Redes Sociales.pdf</span>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                        </div>
+                        <div class="flex items-center justify-between p-3 border border-gray-100 rounded-2xl hover:bg-gray-50 transition cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-blue-50 text-blue-500 flex items-center justify-center rounded-lg font-bold text-[10px]">PNG</div>
+                                <span class="text-sm font-medium">Plantilla Post Instagram.png</span>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
