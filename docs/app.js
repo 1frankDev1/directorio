@@ -2,7 +2,7 @@
 
 const SUPABASE_URL = 'https://ehszvqwftqgxjggnbcmt.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVoc3p2cXdmdHFneGpnZ25iY210Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk3NDI5MjAsImV4cCI6MjA4NTMxODkyMH0.wh8_Xy4_w9roFxMgbJ-J9A3r5V7duUjnStl4ZsZ0804';
-const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DirectorioPro Initialized');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('sw.js')
                 .then(registration => {
                     console.log('SW registered: ', registration);
                 })

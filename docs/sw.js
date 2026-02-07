@@ -1,10 +1,11 @@
 const CACHE_NAME = 'directoriopro-v1';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/manifest.json'
+  './',
+  'index.html',
+  'dashboard.html',
+  'style.css',
+  'app.js',
+  'manifest.json'
 ];
 
 // Install Event

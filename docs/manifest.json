@@ -2,7 +2,7 @@
   "name": "DirectorioPro - SaaS para Negocios",
   "short_name": "DirectorioPro",
   "description": "Directorio profesional de negocios y herramientas SaaS para gestión.",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
@@ -21,6 +21,6 @@
     }
   ],
   "orientation": "portrait",
-  "scope": "/",
+  "scope": "./",
   "lang": "es"
 }
