@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'selector',
             theme: {
                 extend: {
                     colors: {
@@ -61,8 +62,8 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
                 </div>
-                <button id="loginBtn" class="text-sm font-bold text-custom-main hover:text-pastel-blue transition">Acceso</button>
-                <button class="px-6 py-3 bg-pastel-blue text-white text-sm font-bold rounded-2xl hover:bg-opacity-90 transition shadow-lg shadow-pastel-blue/20">Registro</button>
+                <button data-modal="loginModal" class="text-sm font-bold text-custom-main hover:text-pastel-blue transition">Acceso</button>
+                <button data-modal="registerModal" class="px-6 py-3 bg-pastel-blue text-white text-sm font-bold rounded-2xl hover:bg-opacity-90 transition shadow-lg shadow-pastel-blue/20">Registro</button>
             </div>
         </nav>
     </header>
@@ -148,7 +149,7 @@
     </footer>
 
     <!-- Login Modal (Hidden) -->
-    <div id="loginModal" class="fixed inset-0 bg-black/40 backdrop-blur-md z-[100] hidden items-center justify-center p-4">
+    <div id="loginModal" class="modal fixed inset-0 bg-black/40 backdrop-blur-md z-[100] hidden items-center justify-center p-4">
         <div class="themed-card w-full max-w-md overflow-hidden animate-fade-in border-none shadow-2xl">
             <div class="p-10">
                 <div class="flex justify-between items-center mb-10">
@@ -157,16 +158,45 @@
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </button>
                 </div>
-                <form class="space-y-6">
+                <form id="loginForm" class="space-y-6">
                     <div>
                         <label class="block text-xs font-black uppercase tracking-widest text-custom-muted mb-2">Email</label>
-                        <input type="email" placeholder="tu@email.com" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition">
+                        <input type="email" placeholder="tu@email.com" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition" required>
                     </div>
                     <div>
                         <label class="block text-xs font-black uppercase tracking-widest text-custom-muted mb-2">Password</label>
-                        <input type="password" placeholder="••••••••" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition">
+                        <input type="password" placeholder="••••••••" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition" required>
                     </div>
                     <button type="submit" class="w-full py-5 bg-pastel-blue text-white rounded-2xl font-black text-lg shadow-xl shadow-pastel-blue/20 hover:opacity-90 transition">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal (Hidden) -->
+    <div id="registerModal" class="modal fixed inset-0 bg-black/40 backdrop-blur-md z-[100] hidden items-center justify-center p-4">
+        <div class="themed-card w-full max-w-md overflow-hidden animate-fade-in border-none shadow-2xl">
+            <div class="p-10">
+                <div class="flex justify-between items-center mb-10">
+                    <h2 class="text-3xl font-black text-custom-main">Únete</h2>
+                    <button class="close-modal text-custom-muted hover:text-custom-main transition">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <form id="registerForm" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-custom-muted mb-2">Nombre Completo</label>
+                        <input type="text" placeholder="Juan Pérez" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-custom-muted mb-2">Email</label>
+                        <input type="email" placeholder="tu@email.com" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-custom-muted mb-2">Password</label>
+                        <input type="password" placeholder="••••••••" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-custom outline-none focus:ring-4 focus:ring-pastel-blue/20 text-custom-main transition" required>
+                    </div>
+                    <button type="submit" class="w-full py-5 bg-pastel-pink text-white rounded-2xl font-black text-lg shadow-xl shadow-pastel-pink/20 hover:opacity-90 transition">Crear Cuenta</button>
                 </form>
             </div>
         </div>
