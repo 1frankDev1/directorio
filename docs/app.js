@@ -1,7 +1,7 @@
 // DirectorioPro - Frontend Logic (Themed & Functional)
 
-const SUPABASE_URL = 'https://ehszvqwftqgxjggnbcmt.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVoc3p2cXdmdHFneGpnZ25iY210Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk3NDI5MjAsImV4cCI6MjA4NTMxODkyMH0.wh8_Xy4_w9roFxMgbJ-J9A3r5V7duUjnStl4ZsZ0804';
+const SUPABASE_URL = 'https://ldxdcneeaphiszzxkolg.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkeGRjbmVlYXBoaXN6enhrb2xnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0NDE0NzQsImV4cCI6MjA4NjAxNzQ3NH0.rfxA1aniwMv6XAmMZWYLaw9qjXTm_6rY2u4NimWaEDs';
 const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 document.addEventListener('DOMContentLoaded', () => {
