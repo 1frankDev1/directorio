@@ -44,22 +44,22 @@
             </div>
 
             <div class="hidden lg:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-custom-muted">
-                <a href="#" class="hover:text-pastel-blue transition">Explorar</a>
-                <a href="#" class="hover:text-pastel-blue transition">Categorías</a>
-                <a href="#" class="hover:text-pastel-blue transition">SaaS Panel</a>
+                <a href="#results" class="hover:text-pastel-blue transition">Explorar</a>
+                <a href="#categories" class="hover:text-pastel-blue transition">Categorías</a>
+                <a href="dashboard.html" class="hover:text-pastel-blue transition">SaaS Panel</a>
             </div>
 
             <div class="flex items-center gap-6">
                 <!-- Theme Switcher -->
                 <div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-full border border-custom">
-                    <button id="theme-light" class="w-8 h-8 rounded-full flex items-center justify-center transition" title="Pastel">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                    <button data-theme-btn="light" id="theme-light" class="w-8 h-8 rounded-full flex items-center justify-center transition" title="Pastel">
+                        <svg class="pointer-events-none w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
                     </button>
-                    <button id="theme-intermediate" class="w-8 h-8 rounded-full flex items-center justify-center transition" title="Intermedio">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <button data-theme-btn="intermediate" id="theme-intermediate" class="w-8 h-8 rounded-full flex items-center justify-center transition" title="Intermedio">
+                        <svg class="pointer-events-none w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     </button>
-                    <button id="theme-dark" class="w-8 h-8 rounded-full flex items-center justify-center transition" title="Oscuro">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <button data-theme-btn="dark" id="theme-dark" class="w-8 h-8 rounded-full flex items-center justify-center transition" title="Oscuro">
+                        <svg class="pointer-events-none w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
                 </div>
                 <button data-modal="loginModal" class="text-sm font-bold text-custom-main hover:text-pastel-blue transition">Acceso</button>
@@ -99,32 +99,39 @@
     </section>
 
     <!-- Categories -->
-    <section class="py-24 container mx-auto px-6">
+    <section id="categories" class="py-24 container mx-auto px-6">
         <h2 class="text-3xl font-black mb-16 text-center text-custom-main">Explora por <span class="text-pastel-pink">categoría</span></h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="themed-card p-10 text-center hover:-translate-y-2 transition cursor-pointer group">
-                <div class="w-20 h-20 bg-pastel-blue/20 text-pastel-blue rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-pastel-blue group-hover:text-white transition">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        <div id="categoryGrid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Dynamic Categories -->
+            <div class="animate-pulse bg-gray-200 h-48 rounded-3xl"></div>
+            <div class="animate-pulse bg-gray-200 h-48 rounded-3xl"></div>
+            <div class="animate-pulse bg-gray-200 h-48 rounded-3xl"></div>
+            <div class="animate-pulse bg-gray-200 h-48 rounded-3xl"></div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-24 bg-white/30 dark:bg-black/10 transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl font-black text-custom-main mb-4">Directorio de <span class="text-pastel-blue">Negocios</span></h2>
+                    <p id="resultsCount" class="text-custom-muted font-bold">Mostrando todos los resultados</p>
                 </div>
-                <h3 class="font-black text-xl text-custom-main">Hogar</h3>
+                <div class="hidden md:block">
+                    <select id="sortFilter" class="bg-transparent border-b-2 border-custom font-bold py-2 outline-none text-custom-main">
+                        <option value="featured">Destacados</option>
+                        <option value="rating">Mejor Valorados</option>
+                        <option value="newest">Más Recientes</option>
+                    </select>
+                </div>
             </div>
-            <div class="themed-card p-10 text-center hover:-translate-y-2 transition cursor-pointer group">
-                <div class="w-20 h-20 bg-pastel-pink/20 text-pastel-pink rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-pastel-pink group-hover:text-white transition">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                </div>
-                <h3 class="font-black text-xl text-custom-main">Comida</h3>
-            </div>
-            <div class="themed-card p-10 text-center hover:-translate-y-2 transition cursor-pointer group">
-                <div class="w-20 h-20 bg-pastel-mint/20 text-pastel-mint rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-pastel-mint group-hover:text-white transition">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
-                <h3 class="font-black text-xl text-custom-main">Técnicos</h3>
-            </div>
-            <div class="themed-card p-10 text-center hover:-translate-y-2 transition cursor-pointer group">
-                <div class="w-20 h-20 bg-gray-200/50 text-gray-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-500 group-hover:text-white transition">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-                </div>
-                <h3 class="font-black text-xl text-custom-main">Más</h3>
+
+            <div id="businessGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Businesses will be injected here -->
+                <div class="animate-pulse themed-card h-96"></div>
+                <div class="animate-pulse themed-card h-96"></div>
+                <div class="animate-pulse themed-card h-96"></div>
             </div>
         </div>
     </section>

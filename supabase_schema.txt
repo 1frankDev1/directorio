@@ -4,8 +4,9 @@
 -- ==========================================
 
 -- Información del proyecto proporcionada:
--- Project URL: https://ldxdcneeaphiszzxkolg.supabase.co
+-- Project URL: https://ehszvqwftqgxjggnbcmt.supabase.co
 -- Password: lEFiRDjWuXScxNFb
+-- Anon Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVoc3p2cXdmdHFneGpnZ25iY210Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk3NDI5MjAsImV4cCI6MjA4NTMxODkyMH0.wh8_Xy4_w9roFxMgbJ-J9A3r5V7duUjnStl4ZsZ0804
 
 -- 1. EXTENSIONES
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -57,6 +58,7 @@ CREATE TABLE public.businesses (
   opening_hours JSONB,
   is_verified BOOLEAN DEFAULT FALSE,
   is_featured BOOLEAN DEFAULT FALSE,
+  rating DECIMAL(3,2) DEFAULT 5.0,
   latitude DOUBLE PRECISION,
   longitude DOUBLE PRECISION,
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -282,3 +284,18 @@ CREATE TRIGGER update_profiles_updated_at BEFORE UPDATE ON public.profiles FOR E
 CREATE TRIGGER update_businesses_updated_at BEFORE UPDATE ON public.businesses FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 CREATE TRIGGER update_notes_updated_at BEFORE UPDATE ON public.notes FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 CREATE TRIGGER update_inventory_updated_at BEFORE UPDATE ON public.inventory FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- SEED DATA
+INSERT INTO public.categories (name, icon_url, slug) VALUES
+('Comida', 'utensils', 'comida'),
+('Hogar', 'home', 'hogar'),
+('Técnicos', 'wrench', 'tecnicos'),
+('Salud', 'heart', 'salud');
+
+-- Nota: Para insertar negocios se requiere un owner_id real de la tabla auth.users
+-- Este es un ejemplo que asume que insertarás categorías primero.
+INSERT INTO public.businesses (name, description, category_id, slug, address, phone, whatsapp, rating, is_verified, is_featured)
+VALUES
+('Restaurante El Sabor', 'La mejor comida casera de la ciudad.', (SELECT id FROM public.categories WHERE slug='comida'), 'restaurante-el-sabor', 'Calle Mayor 1', '123456789', '123456789', 4.5, true, true),
+('Plomería Rápida', 'Soluciones de fontanería 24/7.', (SELECT id FROM public.categories WHERE slug='tecnicos'), 'plomeria-rapida', 'Av. Libertad 10', '987654321', '987654321', 4.8, true, false),
+('Jardines Verdes', 'Diseño y mantenimiento de jardines.', (SELECT id FROM public.categories WHERE slug='hogar'), 'jardines-verdes', 'Calle Balmes 50', '555444333', '555444333', 4.2, false, true);

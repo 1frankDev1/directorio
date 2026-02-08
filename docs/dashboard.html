@@ -40,22 +40,22 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 <span class="hidden lg:block font-bold">Volver al Inicio</span>
             </a>
-            <a href="#" class="flex items-center gap-4 px-4 py-4 bg-pastel-blue/10 text-pastel-blue rounded-2xl group transition">
+            <button data-tab="overview" class="w-full flex items-center gap-4 px-4 py-4 bg-pastel-blue/10 text-pastel-blue rounded-2xl group transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 <span class="hidden lg:block font-bold">Resumen</span>
-            </a>
-            <a href="#" class="flex items-center gap-4 px-4 py-4 text-custom-muted hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl group transition">
+            </button>
+            <button data-tab="business" class="w-full flex items-center gap-4 px-4 py-4 text-custom-muted hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl group transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                 <span class="hidden lg:block font-bold">Mi Negocio</span>
-            </a>
-            <a href="#" class="flex items-center gap-4 px-4 py-4 text-custom-muted hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl group transition">
+            </button>
+            <button data-tab="promos" class="w-full flex items-center gap-4 px-4 py-4 text-custom-muted hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl group transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
                 <span class="hidden lg:block font-bold">Promociones</span>
-            </a>
-            <a href="#" class="flex items-center gap-4 px-4 py-4 text-custom-muted hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl group transition">
+            </button>
+            <button data-tab="inventory" class="w-full flex items-center gap-4 px-4 py-4 text-custom-muted hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl group transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                 <span class="hidden lg:block font-bold">Inventario</span>
-            </a>
+            </button>
         </nav>
 
         <div class="p-6 w-full space-y-4">
@@ -84,14 +84,14 @@
             <div class="flex items-center gap-4">
                 <!-- Theme Switcher -->
                 <div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-full border border-custom">
-                    <button id="theme-light" class="w-10 h-10 rounded-full flex items-center justify-center transition" title="Pastel">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                    <button data-theme-btn="light" id="theme-light" class="w-10 h-10 rounded-full flex items-center justify-center transition" title="Pastel">
+                        <svg class="pointer-events-none w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
                     </button>
-                    <button id="theme-intermediate" class="w-10 h-10 rounded-full flex items-center justify-center transition" title="Intermedio">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <button data-theme-btn="intermediate" id="theme-intermediate" class="w-10 h-10 rounded-full flex items-center justify-center transition" title="Intermedio">
+                        <svg class="pointer-events-none w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     </button>
-                    <button id="theme-dark" class="w-10 h-10 rounded-full flex items-center justify-center transition" title="Oscuro">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <button data-theme-btn="dark" id="theme-dark" class="w-10 h-10 rounded-full flex items-center justify-center transition" title="Oscuro">
+                        <svg class="pointer-events-none w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
                 </div>
                 <div class="w-12 h-12 bg-pastel-pink rounded-2xl flex items-center justify-center text-white shadow-lg overflow-hidden border-2 border-white">
