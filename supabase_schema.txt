@@ -4,7 +4,7 @@
 -- ==========================================
 
 -- Información del proyecto proporcionada:
--- Project URL: https://ehszvqwftqgxjggnbcmt.supabase.co
+-- Project URL: https://ldxdcneeaphiszzxkolg.supabase.co
 -- Password: lEFiRDjWuXScxNFb
 
 -- 1. EXTENSIONES
